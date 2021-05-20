@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CardParser</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image_fragment_name">Name</string>
+    <string name="image_fragment_email">Email</string>
+    <string name="image_fragment_phone">Phone</string>
+    <string name="image_fragment_btn">To contacts</string>
+</resources>
