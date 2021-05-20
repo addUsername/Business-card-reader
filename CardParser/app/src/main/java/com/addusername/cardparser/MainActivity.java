@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.provider.ContactsContract;
+import android.util.Log;
 import android.util.Size;
 import android.util.SparseIntArray;
 import android.view.Surface;
@@ -56,8 +57,21 @@ public class MainActivity extends AppCompatActivity implements ViewOps {
         });
     }
 
+    @Override
+    public void setPredictedContact(Contact body) {
+        runOnUiThread(() -> {
+            Log.d("retro","SET PREDICTION");
+            try{
+                imageF.setContact(body);
+            }catch (NullPointerException e){
+                e.printStackTrace();
+            }
+        });
+    }
+
     public void parseImg(byte[] bytes) {
-        mo.parseImg(bytes);
+        //mo.parseImg(bytes);
+        mo.parseImgAndGetPrediction(bytes);
     }
 
     public void addContact(Contact contact) {
